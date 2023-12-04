@@ -55,14 +55,11 @@ public class App4()
 
             while (noGames > 0)
             {
-
                 var winningCards = cardStr[0].Trim().Split(" ").Where(s => !string.IsNullOrEmpty(s)).ToHashSet();
                 var myCards = cardStr[1].Trim().Split(" ").Where(s => !string.IsNullOrEmpty(s)).ToHashSet();
                 var win = myCards.Intersect(winningCards);
-                for (var k = 1; k <= win.Count(); k++)
-                {
-                    sCards[gameNo + k]++;
-                }
+
+                for (var k = 1; k <= win.Count(); k++) sCards[gameNo + k]++;
                 noGames--;
             }
         }
